@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Simplistic Flappy Bird</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <canvas id="gameCanvas" width="400" height="600"></canvas>
+        <div class="global-balance" id="globalBalance">
+            ⭐ <span id="globalStars">0</span>
+        </div>
+
+        <div id="scoreDisplay" class="score-display hidden">0</div>
+
+        <div id="startScreen" class="overlay">
+            <div class="glass-panel">
+                <h1>FLAPPY</h1>
+                <p>Press Space or Tap to fly</p>
+                <div class="shop-buttons">
+                    <button id="startBtn">Start Game</button>
+                    <button id="shopBtn1" class="btn-secondary" style="position: relative;">Shop <div class="notification-badge hidden shop-badge">!</div></button>
+                </div>
+            </div>
+        </div>
+
+        <div id="gameOverScreen" class="overlay hidden">
+            <div class="glass-panel">
+                <h2>Game Over</h2>
+                <div class="score-board">
+                    <div class="score-item">
+                        <span>Score</span>
+                        <span id="finalScore" class="score-value">0</span>
+                    </div>
+                    <div class="score-item">
+                        <span>Best</span>
+                        <span id="bestScore" class="score-value">0</span>
+                    </div>
+                </div>
+                <div class="shop-buttons">
+                    <button id="restartBtn">Play Again</button>
+                    <button id="shopBtn2" class="btn-secondary" style="position: relative;">Shop <div class="notification-badge hidden shop-badge">!</div></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Shop Screen -->
+        <div id="shopScreen" class="overlay hidden">
+            <div class="glass-panel" style="width: 90%; max-width: 350px;">
+                <h2>Bird Shop</h2>
+                <div class="stars-display">
+                    ⭐ <span id="shopStars">0</span>
+                </div>
+                <div id="shopGrid" class="shop-grid">
+                    <!-- Shop items injected via JS -->
+                </div>
+                <button id="closeShopBtn" class="btn-secondary" style="width: 100%;">Back</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
